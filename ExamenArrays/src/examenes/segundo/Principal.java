@@ -32,6 +32,7 @@ public class Principal {
 		
 		BusquedaDelTesoro.inicializaTablero(filas, columnas);
 		BusquedaDelTesoro.generaPosicionJugador();
+		BusquedaDelTesoro.pintaTablero();
 		BusquedaDelTesoro.generaObstaculos(numObstaculos);
 		BusquedaDelTesoro.generaPosicionTesoro();
 		BusquedaDelTesoro.pintaTablero();

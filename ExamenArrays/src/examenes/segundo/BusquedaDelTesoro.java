@@ -6,6 +6,7 @@ import javax.swing.text.TableView.TableRow;
 
 public class BusquedaDelTesoro {
 	
+	public static Random random = new Random();
 	public static char tablero[][];
 	public static int posJ;
 	public static int posI;
@@ -20,7 +21,6 @@ public class BusquedaDelTesoro {
 		}
 	}
 	public static void generaPosicionTesoro() {
-		Random random = new Random();
 		int valorI;
 		int valorJ;
 		boolean tesoro = false;
@@ -124,5 +124,26 @@ public class BusquedaDelTesoro {
 	}
 	public static void generaObstaculos(int numObstaculos) {
 		
+		int contador = 0;
+		int posJ;
+		int posI;
+		
+		while (contador != numObstaculos) {
+			
+			posJ = random.nextInt(0,tablero[0].length);
+			posI = random.nextInt(0,tablero.length);
+			
+			if (tablero[posJ][posI] == ' ' && !obstaculoDiagonal(posJ, posI)) {
+				tablero[posI][posJ] = '*';
+				contador++;
+			}
+		}
+	}
+	public static boolean obstaculoDiagonal (int posJ, int posI) {
+		boolean acierto = false;
+		
+		
+		
+		return acierto;
 	}
 }
