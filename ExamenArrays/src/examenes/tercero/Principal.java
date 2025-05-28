@@ -39,14 +39,24 @@ public class Principal {
 				} while (!acierto);
 			}
 			
-			jugador = jugador == 'O' ? 'X' : 'O';
+			if (!TresEnRaya.esGanador(jugador)) {
+				jugador = jugador == 'O' ? 'X' : 'O';
+			}
+			
 			TresEnRaya.imprimeTablero();
 			
-		} while (!TresEnRaya.esGanador(jugador) || !TresEnRaya.incompleto());
+		} while (!TresEnRaya.esGanador(jugador) && TresEnRaya.incompleto());
 		
+		if (TresEnRaya.esGanador(jugador)) {
 		System.out.println("Ha ganado " + jugador);
+		} else {
+			System.out.println("Fue empeate");
+		}
+		
 		System.out.println("Quieres volver a jugar? S/N");
 		
-	} while (reader.next().charAt(0) == 'S');
+	} while (reader.next().toUpperCase().charAt(0) == 'S');
+		
+		reader.close();
 	} 
 }

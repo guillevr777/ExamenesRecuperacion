@@ -40,7 +40,7 @@ public class TresEnRaya {
 	public static boolean usuarioMueveFicha (int i, int j) {
 		boolean acierto = false;
 			
-		if (tablero[i][j] == '-' && i < tablero.length && j < tablero[0].length) {
+		if (i >= 0 && j >= 0 && i < tablero.length && j < tablero[0].length && tablero[i][j] == '-') {
 			tablero[i][j] = 'O';
 			acierto = true;
 		}
@@ -57,11 +57,9 @@ public class TresEnRaya {
 	}
 	public static boolean esGanador (char ficha) {
 		boolean acierto = false;
+		int contador;
 		boolean fila;
 		boolean columna;
-		 boolean diagonalPrincipal = true;
-		int contadorF = 0;
-		int contadorC = 0;
 		
 		for (int i = 0 ; i < tablero.length ; i++) {
 			
@@ -81,6 +79,32 @@ public class TresEnRaya {
 				acierto = true;
 			}
 		}
+
+		contador = 0;
+		
+		for (int i = 0 ; i < tablero.length ; i++) {
+			if (tablero[i][i] == ficha) {
+				contador++;
+			}
+		} 
+		
+		if (contador == 3) {
+			acierto = true;
+		}
+		
+		contador = 0;
+		
+		for (int i = tablero.length - 1 ; i >= 0 ; i--) {
+			for (int j = 0 ; j < tablero[0].length ; j++) {
+			if (tablero[i][j] == ficha) {
+				contador++;
+			}
+			}
+		}
+		
+		if (contador == 3) {
+			acierto = true;
+		}
 		
 		return acierto;
 	}
@@ -90,7 +114,7 @@ public class TresEnRaya {
 		for (int i = 0 ; i < tablero.length ; i++) {
 			for (int j = 0 ; j < tablero[0].length ; j++) {
 				
-				if (tablero[i][j] == ' ') {
+				if (tablero[i][j] == '-') {
 					acierto = true;
 				}
 			}
