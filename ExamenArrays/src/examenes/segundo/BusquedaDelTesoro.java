@@ -83,40 +83,35 @@ public class BusquedaDelTesoro {
 		
 		switch (movimiento) {
 		case "DERECHA" -> {
-			if (tablero[posI][posJ+1] != '*' && posJ+1 <= tablero[0].length) {
+			if (posJ+1 < tablero[0].length && tablero[posI][posJ+1] != '*') {
 				posJ++;
-			} else if (tablero[posI][posJ+1] != ' ' && posJ+1 > tablero[0].length) {
-				correcto = -1;
 			} else {
-				correcto = -2;
-			}			
+				correcto = -1;
+			}		
 		}
 		case "IZQUIERDA" -> {
-			if (tablero[posI][posJ-1] != '*' && posJ-1 <= tablero[0].length) {
+			if (posJ-1 < tablero[0].length && tablero[posI][posJ-1] != '*') {
 				posJ--;
-			} else if (tablero[posI][posJ-1] != ' ' && posJ-1 > tablero[0].length) {
-				correcto = -1;
 			} else {
-				correcto = -2;
+				correcto = -1;
 			}	
 		}
 		case "ARRIBA" -> {
-			if (tablero[posI-1][posJ] != '*' && posI-1 <= tablero.length) {
+			if (posI-1 < tablero.length && tablero[posI-1][posJ] != '*') {
 				posI--;
-			} else if (tablero[posI-1][posJ] != ' ' && posI-1 > tablero.length) {
-				correcto = -1;
 			} else {
-				correcto = -2;
+				correcto = -1;
 			}	
 		}
 		case "ABAJO" -> {
-			if (tablero[posI+1][posJ] != '*' && posI+1 <= tablero.length) {
+			if (posI+1 < tablero.length && tablero[posI+1][posJ] != '*') {
 				posI++;
-			} else if (tablero[posI+1][posJ] != ' ' && posI+1 > tablero.length) {
-				correcto = -1;
 			} else {
-				correcto = -2;
-			}	
+				correcto = -1;
+			}
+		}
+		default -> {
+			correcto = -2;
 		}
 		}
 		
@@ -141,8 +136,20 @@ public class BusquedaDelTesoro {
 	}
 	public static boolean obstaculoDiagonal (int posJ, int posI) {
 		boolean acierto = false;
+		int i = posI - 1 > 0 ? posI - 1 : posI + 1;
+		int j = 0;
 		
-		
+		while (i < tablero.length && i <= posI + 1 && !acierto) {
+			j = posJ -1 > 0 ? posJ -1 : posJ + 1;
+			while (j < tablero[0].length && j <= posJ + 1 && !acierto) {
+				if (tablero[i][j] == '*') {
+					acierto = true;
+				}
+				
+				j+=2;
+			}
+			i+=2;
+		}
 		
 		return acierto;
 	}

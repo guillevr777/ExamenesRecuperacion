@@ -31,14 +31,13 @@ public class Principal {
 		numObstaculos = (int) Math.sqrt(filas*columnas/2);
 		
 		BusquedaDelTesoro.inicializaTablero(filas, columnas);
-		BusquedaDelTesoro.generaPosicionJugador();
-		BusquedaDelTesoro.pintaTablero();
 		BusquedaDelTesoro.generaObstaculos(numObstaculos);
 		BusquedaDelTesoro.generaPosicionTesoro();
-		BusquedaDelTesoro.pintaTablero();
+		BusquedaDelTesoro.generaPosicionJugador();
 		
 		do {
 			
+			BusquedaDelTesoro.pintaTablero();
 			System.out.println("Dime a que direccion quieres tirar:");
 			movimiento = reader.nextLine().toUpperCase();
 			resultado = BusquedaDelTesoro.mueveJugador(movimiento);
@@ -48,7 +47,6 @@ public class Principal {
 				System.out.println("Fue bien!");
 			}
 			
-			BusquedaDelTesoro.pintaTablero();
 		} while (BusquedaDelTesoro.tablero[BusquedaDelTesoro.posI][BusquedaDelTesoro.posJ] != 'X');
 		System.out.println("Has ganado encontraste el tesoro!");
 	}
