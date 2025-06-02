@@ -1,4 +1,4 @@
-package examenes.segundo;
+package examenesarrays.segundo;
 
 import java.util.Random;
 

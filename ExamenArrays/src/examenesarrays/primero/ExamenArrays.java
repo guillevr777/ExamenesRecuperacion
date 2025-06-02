@@ -1,4 +1,4 @@
-package examenes.primero;
+package examenesarrays.primero;
 import java.lang.reflect.Array;
 import java.util.Random;
 import java.util.Scanner;
