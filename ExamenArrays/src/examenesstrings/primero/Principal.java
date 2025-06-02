@@ -9,6 +9,7 @@ public class Principal {
 		Scanner reader = new Scanner(System.in);
 		Jugador jugador = new Jugador ();
 		
+		
 		int opc = 0;
 		char letra;
 		String palabra;
