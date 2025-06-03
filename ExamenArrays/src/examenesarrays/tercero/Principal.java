@@ -1,4 +1,4 @@
-package examenes.tercero;
+package examenesarrays.tercero;
 
 import java.util.Scanner;
 
