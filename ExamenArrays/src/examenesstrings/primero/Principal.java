@@ -13,13 +13,16 @@ public class Principal {
 		int opc = 0;
 		char letra;
 		String palabra;
+		int numIntentosRestantes = jugador.NUMINTENTOS;
 		
 		jugador.generaPalabra();
 				
 		do {
 			
-			jugador.pintaPista();
+			System.out.println("Numero de intentos restantes: " + numIntentosRestantes);
 			
+			jugador.pintaPista();
+
 			do {
 			try {
 			opc = jugador.menu();
@@ -33,21 +36,25 @@ public class Principal {
 			case 1 -> {
 				System.out.println("Dime la letra a comprobar:"); 
 				letra = reader.next().charAt(0);
-				jugador.compruebaLetra(letra);
+				if (!jugador.compruebaLetra(letra)) {
+					numIntentosRestantes--;
+				}
 			}
 			case 2 -> {
 				System.out.println("Dime la palabra a comprobar:");
 				palabra = reader.nextLine();
-				jugador.compruebaPalabra(palabra);
+				if (!jugador.compruebaPalabra(palabra)) {
+					numIntentosRestantes--;
+				}
 			}
 			default -> {
 				System.out.println("Opcion incorrecta!");
 			}
 			}
 			
-		} while (jugador.NUMINTENTOS > 0 && !jugador.palabraPista.equalsIgnoreCase(jugador.palabraSecreta));
+		} while (numIntentosRestantes > 0 && !jugador.palabraPista.equalsIgnoreCase(jugador.palabraSecreta));
 		
-		if (jugador.NUMINTENTOS > 0) {
+		if (numIntentosRestantes > 0) {
 			System.out.println("Acertaste la palabra!");
 		} else {
 			System.out.println("Perdiste el juego...");
