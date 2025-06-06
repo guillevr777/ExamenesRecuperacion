@@ -5,7 +5,7 @@ import java.util.Random;
 public class Jugador {
 
 	char abecedario[][] = {{'a','b','c','d','e','f','g','h','i'},{'j','k','l','m','n','ñ','o','p','q'},{'r','s','t','u','v','w','x','y','z'}};
-	String frases[] = {"las guerras seguiran mientras el color de la piel siga siendo mas importante que el de los ojos","aprende a vivir y sabras morir bien","cada dia sabemos mas y entendemos menos","el dinero no puede comprar la vida","la verdadera sabiduria esta en reconocer la propia ignorancia"};
+	String frases[] = {"ae","las guerras seguiran mientras el color de la piel siga siendo mas importante que el de los ojos","aprende a vivir y sabras morir bien","cada dia sabemos mas y entendemos menos","el dinero no puede comprar la vida","la verdadera sabiduria esta en reconocer la propia ignorancia"};
 	String fraseReal = "";
 	String fraseCodificada = "";
 	
@@ -77,15 +77,25 @@ public class Jugador {
 		return exito;
 	}
 	public boolean sonIguales () {
-		String fraseCorrecta = "";
-		boolean iguales = false;
+		String intentoFrase = fraseCodificada.replace(" ", "");
+		String intentoReal = fraseReal.replace(" ", "");
+
+		boolean iguales = true;
 		boolean acierto = false;
 		int fila = 0;
 		
-		while (fila < fraseCodificada.length() && !acierto) {
-			if (fraseCodificada.charAt(fila) != fraseReal.charAt(fila)) {
-				acierto = true;
+		if (intentoFrase.length() == intentoReal.length()) {
+			while (fila < intentoFrase.length() && !acierto) {
+				if (String.valueOf(intentoFrase).charAt(fila) != ' ') {
+					if (String.valueOf(intentoFrase).charAt(fila) != String.valueOf(intentoReal).charAt(fila)) {
+						acierto = true;
+						iguales = false;
+					}
+				}
+				fila++;
 			}
+		} else {
+			iguales = false;
 		}
 		
 		return iguales;

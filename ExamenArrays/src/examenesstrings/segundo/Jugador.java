@@ -38,12 +38,12 @@ public class Jugador {
 	}
 	public boolean compruebaIntento(String intento) {
 		boolean exito = false;
-		String palabra = ultimoIntento(); 
-		char palabraDesglozada[] = palabra.toUpperCase().toCharArray();
+//		String palabra = ultimoIntento(); 
+		char palabraDesglozada[] = ultimoIntento().toUpperCase().toCharArray();
 		char intentoDesglozado[] = intento.toUpperCase().toCharArray();
 		int contador = 0;
 		
-			for (int i = 0 ; i < palabra.length() ; i++) {
+			for (int i = 0 ; i < palabraDesglozada.length ; i++) {
 				if (palabraDesglozada[i] != intentoDesglozado[i]) {
 					contador++;
 				}

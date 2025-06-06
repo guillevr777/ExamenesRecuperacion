@@ -1,17 +1,45 @@
 package examenesstrings.tercero;
 
+import java.util.Scanner;
+
 public class Principal {
 
 	public static void main(String[] args) {
 
+		Scanner reader = new Scanner(System.in);
 		Jugador jugador = new Jugador();
+		char letra;
+		int numero;
 		
 		jugador.desordenaAbecedario();
-		System.out.println(jugador.abecedario);
 		jugador.eligeFrase();
 		jugador.codificaFrase();
-		jugador.compruebaCodigo(12, 'a');
-		System.out.println(jugador.sonIguales());
-		System.out.println(jugador.fraseCodificada);
+		
+		do {
+			System.out.println(jugador.fraseReal);
+			System.out.println(jugador.fraseCodificada);
+			
+			for (int i = 0 ; i < jugador.abecedario.length ; i++) {
+				for (int j = 0 ; j < jugador.abecedario[i].length ; j++) {
+					
+					System.out.print(jugador.abecedario[i][j] + " ");
+				}
+				System.out.println();
+			}
+
+			System.out.println("Dime un numero y una letra:");
+			numero = reader.nextInt();
+			reader.nextLine();
+			letra = reader.nextLine().charAt(0);
+			
+			if (jugador.compruebaCodigo(numero, letra)) {
+				System.out.println("hacertaste");
+			}
+			
+		} while (!jugador.sonIguales());
+		
+		System.out.println(jugador.fraseReal);
+
+		System.out.println("Ganaste!");
 	}
 }

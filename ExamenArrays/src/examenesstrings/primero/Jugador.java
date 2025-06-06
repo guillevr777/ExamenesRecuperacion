@@ -19,7 +19,7 @@ public class Jugador {
 	public void generaPalabra() {
 		Random random = new Random();
 
-		palabraSecreta = palabras[random.nextInt(0, 10)];
+		palabraSecreta = palabras[random.nextInt(0, palabras.length)];
 		palabraPista = "-".repeat(palabraSecreta.length());
 	}
 
