@@ -1,0 +1,32 @@
+	 Personaje
+	 
+	 	-String nombre
+	 	-int nivel = 0
+	 	-int puntosVida
+	 	-int puntosMana
+	 	-boolean escudo = false
+	 	-Pociones pociones = new Pociones() {vida, mana}
+	 	
+	 	+Personaje (nombre, nivel, )
+	 	
+	 	+void recibirDaño()
+	 	+void recuperarVida()
+	 	+void recuperarMana()
+	 	+void cogerPocion()
+	 	+void usarPocion()
+	 	
+	 	+boolean iguales()
+	 	+int ordenar()
+	 	+String toString()
+ 	
+ 	Guerrero extends Personaje
+ 	
+ 	Mago extends Personaje
+ 	
+ 	Picaro extends Personaje
+ 	
+ 	VidaException extends Exception 
+ 	
+ 	ManaException extends Exception 
+ 	
+ 	

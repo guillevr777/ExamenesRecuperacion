@@ -1,5 +1,5 @@
 package examenesherencias.primero.excepciones;
 
-public class Exception {
+public class ManaException extends Exception {
 
 }
