@@ -27,6 +27,8 @@ public class Principal {
 		
 		for (Personaje per : lista) {
 			System.out.println(per);
+			
+			System.out.println("---------------------");
 		}
 	}
 }
