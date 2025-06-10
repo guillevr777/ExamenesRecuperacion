@@ -1,5 +1,6 @@
 package examenherencias.segundo.clases;
 
+import examenherencias.segundo.excepciones.NegativeVelocityException;
 import examenherencias.segundo.excepciones.NegativeVolumeException;
 import examenherencias.segundo.interfaces.Velocidad;
 
@@ -47,11 +48,11 @@ public class AireAcondicionado extends Mando implements Velocidad{
 	}
 
 	@Override
-	public void bajarVelocidad() throws NegativeVolumeException {
+	public void bajarVelocidad() throws NegativeVelocityException {
 		if (this.velocidad > 0) {
 			this.velocidad--;
 		} else {
-			throw new NegativeVolumeException();
+			throw new NegativeVelocityException();
 		}
 	}
 	

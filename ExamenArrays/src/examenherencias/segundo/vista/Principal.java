@@ -8,6 +8,7 @@ import examenherencias.segundo.clases.Aspiradora;
 import examenherencias.segundo.clases.Mando;
 import examenherencias.segundo.clases.Minicadenas;
 import examenherencias.segundo.clases.Television;
+import examenherencias.segundo.excepciones.NegativeVelocityException;
 import examenherencias.segundo.excepciones.NegativeVolumeException;
 
 public class Principal {
@@ -49,7 +50,7 @@ public class Principal {
 				((Aspiradora) man).subirVelocidad();
 				try {
 					((Aspiradora) man).bajarVelocidad();
-				} catch (NegativeVolumeException e) {
+				} catch (NegativeVelocityException e) {
 					System.out.println(e);
 				}
 			} else if (man instanceof AireAcondicionado) {
