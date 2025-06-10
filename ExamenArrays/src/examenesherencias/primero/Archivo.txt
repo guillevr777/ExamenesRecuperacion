@@ -1,32 +1,83 @@
-	 Personaje
+	
+	 Class Abstract Personaje 
 	 
-	 	-String nombre
-	 	-int nivel = 0
-	 	-int puntosVida
-	 	-int puntosMana
-	 	-boolean escudo = false
-	 	-Pociones pociones = new Pociones() {vida, mana}
+	 	- String nombre
+	 	- int nivel = 0
+	 	- int puntosVida
+	 	- int puntosMana
+	 	- boolean escudo = false
+	 	- List<Pocion> pociones = new ArrayList<Pocion>() {vida, mana}
 	 	
-	 	+Personaje (nombre, nivel, )
+	 	+ Personaje (String nombre, int puntosVida, int puntosMana) throws ManaException, VidaException
 	 	
-	 	+void recibirDaño()
-	 	+void recuperarVida()
-	 	+void recuperarMana()
-	 	+void cogerPocion()
-	 	+void usarPocion()
+	 	+ void recibirDaño(int daño)
+	 	+ void recuperarVida()
+	 	+ void recuperarMana()
+	 	+ void cogerPocion()
+	 	+ void usarPocion(Pocion pocion)
 	 	
-	 	+boolean iguales()
-	 	+int ordenar()
-	 	+String toString()
+	 	heredados:
+		 	+ boolean equals()
+		 	+ int ordenar()
+		 	+ String toString()
+		 	
+	Class Pocion
+	
+		- enum Tipo {VIDA, MANA}
+		- Tipo tipoPocion
+ 		- int cantidad
+ 		
+ 		+ Pocion (String tipo, int cantidad)
+ 		
+ 		heredados:
+ 			+ boolean equals (Pocion pocion)
+ 			+ String toString ()
+ 		
+ 	Class Guerrero extends Personaje implements ataque, defensa
  	
- 	Guerrero extends Personaje
+ 		+ Guerrero (String nombre, int puntosVida, int puntosMana)
+ 		
+ 		heredados:
+ 			+ void atacar (Personaje enemigo, int daño)
+ 			+ void defender (Personaje aliado)
+		 	+ boolean equals ()
+		 	+ int ordenar ()
+		 	+ String toString ()
+ 		 	
+ 	Class Mago extends Personaje implements ataque, curar
  	
- 	Mago extends Personaje
+		+ Mago (String nombre, int puntosVida, int puntosMana)
+		
+		heredados:
+			+ void atacar (Personaje enemigo, int daño)
+			+ void curar (Personaje aliado)
+		 	+ boolean equals()
+		 	+ int ordenar()
+		 	+ String toString()
  	
- 	Picaro extends Personaje
+ 	Class Picaro extends Personaje implements ataque
  	
- 	VidaException extends Exception 
+ 		+ Picaro (String nombre, int puntosVida, int puntosMana)
+ 		
+ 		heredados:
+ 			+ void atacar (Personaje enemigo, int daño)
+		 	+ boolean equals()
+		 	+ int ordenar()
+		 	+ String toString()
  	
- 	ManaException extends Exception 
+ 	Interface Ataque 
  	
+ 		+ void atacar (Personaje enemigo)
+ 	
+ 	Interface Defensa
+ 	
+ 		+ void defender (Personaje aliado)
+ 	
+ 	Interface Curar
+ 	
+ 		+ void curar (Personaje aliado)
+ 	
+ 	Class VidaException extends Exception 
+ 	
+ 	Class ManaException extends Exception 
  	
