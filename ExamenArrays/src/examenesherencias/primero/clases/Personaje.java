@@ -38,6 +38,10 @@ public class Personaje implements Comparable<Personaje> {
  		return this.nivel;
  	}
  	
+ 	public void setNivel(int i) {
+		this.nivel = i;
+	}
+ 	
  	public boolean recibirDaño(int daño) {
  		boolean acierto = false;
  		
@@ -120,7 +124,7 @@ public class Personaje implements Comparable<Personaje> {
  		
  		frase += this.nombre + " - nivel:" + this.nivel + " - PV:" + this.puntosVida + " - PH:" + this.puntosMana + " - ";
  		
- 		frase += this.escudo == true ? "Escudo Activo" : "Escudo Inactivo";
+ 		frase += this.escudo == true ? "Escudo Activo" : "Escudo Inactivo\n";
  		
  		frase += "Pociones: " + stringPociones();
  		

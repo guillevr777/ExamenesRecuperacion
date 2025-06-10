@@ -1,0 +1,103 @@
+
+	Class Mando implements Comparable<Mando>
+		
+		- String modelo
+		- double anchura
+		- double altura
+		- double precio
+		- boolean encendido = false
+		
+		+ Mando (modelo, anchura, altura, precio)
+		
+		+ String getModelo()
+		+ double getAnchura()
+		+ double getAltura()
+		+ double getPrecio()
+		+ boolean getEncendido
+		+ void alternarEncendido()
+		
+		heredados:
+		
+			+ boolean equals(Object obj)
+			+ int ordenAlfabetico(Mando mando)
+			+ String toString()
+				
+	Class Television extends Mando implements Volumen
+	
+		- int volumen
+		- int canal
+		
+		+ Television (modelo, anchura, altura, precio)
+		
+		+ int getVolumen()
+		+ int getCanal()
+		+ void setCanal(int canal)
+		
+		heredados:
+		
+			+ void subirVolumen () -> boolean para dar a saber al usuario que no se puede subir mas de X? 5 en 5
+			+ void bajarVolumen ()
+			+ String toString()
+	
+	Class Minicadenas extends Mando implements Volumen
+	
+		- int volumen
+		
+		+ Minicadenas (modelo, anchura, altura, precio)
+		
+		+ int getVolumen ()
+		
+		heredados:
+		
+			+ void subirVolumen () -> 10 en 10
+			+ void bajarVolumen ()
+			+ String toString()
+	
+	Class Aspiradora extends Mando implements Velocidad
+	
+		- int velocidad = 0 (0-3) 
+		
+		+ Aspiradora (modelo, anchura, altura, precio)
+		
+		+ int getVelocidad ()
+		
+		heredados:
+			
+			+ void subirVelocidad () -> 1 en 1
+			+ void bajarVelocidad ()
+			+ String toString()
+	
+	Class AireAcondicionado extends Mando implements Velocidad
+	
+		- enum Modo {FRIO, CALIENTE}
+		- Modo modo = modo.valueOf("FRIO");
+		- int temperatura
+		- int velocidad = 0 (0-5)
+		
+		+ AireAcondicionado (modelo, anchura, altura, precio)
+		
+		+ String getModo()
+		+ int getTemperatura()
+		+ void setTemperatura(int temperatura)
+		+ int getVelocidad ()
+		
+		heredados:
+		
+			+ void subirVelocidad () -> 1 en 1
+			+ void bajarVelocidad ()
+			+ String toString()
+		
+	interface Volumen
+		
+		+ void subirVolumen ()
+		+ void bajarVolumen ()
+		
+	interface Velocidad
+		
+		+ void subirVelocidad ()
+		+ void bajarVelocidad ()
+		
+	Class NegativeVelocityException implements Exception -> Como implementar las excepciones en las interfaces??
+	
+	Class NegativeVolumeException implements Exception
+		
