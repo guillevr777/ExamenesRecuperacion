@@ -19,13 +19,6 @@ public class AireAcondicionado extends Mando implements Velocidad{
 		return String.valueOf(this.modo);
 	}
 	
-	public void setModo (String modo) {
-		switch (modo) {
-		case "CALIENTE" -> this.modo = Modo.valueOf(modo);
-		default -> this.modo = Modo.FRIO;
-		}
-	}
-	
 	public int getTemperatura () {
 		return this.temperatura;
 	}
@@ -38,6 +31,11 @@ public class AireAcondicionado extends Mando implements Velocidad{
 	
 	public int getVelocidad () {
 		return this.velocidad;
+	}
+	
+	//ESTA MAL QUITA EL PARAMETRO Y HAZ UN TERNARIO
+	public void cambiarModo () {
+		modo = modo.equals(Modo.FRIO) ? Modo.CALIENTE : Modo.FRIO;
 	}
 	
 	@Override

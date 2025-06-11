@@ -29,10 +29,13 @@ public class Principal {
 		
 		for (Mando man : lista) {
 			System.out.println(man);
+			man.alternarEncendido();
+			System.out.println(man.isEncendido() ? "Encendido":"Apagado");
 			System.out.println("-------------------------------------------------");
 			
 			if (man instanceof Television) {
 				((Television) man).setCanal(3);
+				((Television) man).subirVolumen();
 				((Television) man).subirVolumen();
 				try {
 					((Television) man).bajarVolumen();
@@ -41,12 +44,14 @@ public class Principal {
 				}
 			} else if (man instanceof Minicadenas) {
 				((Minicadenas) man).subirVolumen();
+				((Minicadenas) man).subirVolumen();
 				try {
 					((Minicadenas) man).bajarVolumen();
 				} catch (NegativeVolumeException e) {
 					System.out.println(e);
 				}
 			} else if (man instanceof Aspiradora) {
+				((Aspiradora) man).subirVelocidad();
 				((Aspiradora) man).subirVelocidad();
 				try {
 					((Aspiradora) man).bajarVelocidad();
@@ -62,5 +67,19 @@ public class Principal {
 				((AireAcondicionado) man).subirVelocidad();
 			}
 		}
+		
+		System.out.println("Comprobaciones:");
+		System.out.println("--Televion--");
+		System.out.println("Volumen -> "+tele.getVolumen());
+		System.out.println("Canal -> " + tele.getCanal());
+		System.out.println("\n--Minicadena--");
+		System.out.println("Volumen -> "+mini.getVolumen());
+		System.out.println("\n--Aspiradora--");
+		System.out.println("Velocidad -> " + aspi.getVelocidad());
+		System.out.println("\n--aireAcondicionado--");
+		System.out.println("Modo -> " + aire.getModo());
+		System.out.println("Temperatura -> " + aire.getTemperatura());
+		System.out.println("Velocidad -> " + aire.getVelocidad());
+		
 	}
 }

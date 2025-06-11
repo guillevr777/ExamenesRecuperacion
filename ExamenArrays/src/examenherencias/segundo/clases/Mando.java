@@ -39,7 +39,7 @@ public class Mando implements Comparable<Mando>{
 		return this.precio;
 	}
 	
-	public boolean getEncendido () {
+	public boolean isEncendido () {
 		return this.encendido;
 	}
 	

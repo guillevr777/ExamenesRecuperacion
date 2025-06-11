@@ -24,8 +24,8 @@
 				
 	Class Television extends Mando implements Volumen
 	
-		- int volumen
-		- int canal
+		- int volumen : 0
+		- int canal : 1
 		
 		+ Television (modelo, anchura, altura, precio)
 		
@@ -41,7 +41,7 @@
 	
 	Class Minicadenas extends Mando implements Volumen
 	
-		- int volumen
+		- int volumen : 0
 		
 		+ Minicadenas (modelo, anchura, altura, precio)
 		
@@ -70,8 +70,8 @@
 	Class AireAcondicionado extends Mando implements Velocidad
 	
 		- enum Modo {FRIO, CALIENTE}
-		- Modo modo = modo.valueOf("FRIO");
-		- int temperatura
+		- Modo modo = Modo.FRIO;
+		- int temperatura : 24
 		- int velocidad = 0 (0-5)
 		
 		+ AireAcondicionado (modelo, anchura, altura, precio)
@@ -80,6 +80,8 @@
 		+ int getTemperatura()
 		+ void setTemperatura(int temperatura)
 		+ int getVelocidad ()
+		
+		+ void combiarModo()
 		
 		heredados:
 		
