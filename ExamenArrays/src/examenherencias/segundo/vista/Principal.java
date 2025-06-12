@@ -59,7 +59,6 @@ public class Principal {
 					System.out.println(e);
 				}
 			} else if (man instanceof AireAcondicionado) {
-				((AireAcondicionado) man).setModo("CALIENTE");
 				((AireAcondicionado) man).setTemperatura(28);
 				((AireAcondicionado) man).subirVelocidad();
 				((AireAcondicionado) man).subirVelocidad();

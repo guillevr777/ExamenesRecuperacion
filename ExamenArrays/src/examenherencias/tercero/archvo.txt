@@ -1,0 +1,123 @@
+
+	abstract Class Pieza
+	
+		- enum Tipo {BLANCO, NEGRO, GRIS}
+		- Tipo color 
+		- char posicionX
+		- int posicionY
+		
+		+ Pieza (String color, char posicionX, int posicionY)
+		
+		+ String getColor ()
+		+ char getPosicionX ()
+		+ int getPosicionY ()
+		
+		heredados:
+		
+			+ String toString ()
+			+ boolean equals ()
+			+ int compareTo ()
+		
+	abstract Class Ajedrez extends Pieza implements Movimiento
+	
+		- String nombre 
+	
+		+ Ajedrez (String color, char posicionX, int posicionY, String nombre)
+		
+		+ String getNombre ()
+		
+		heredados:
+			
+			+ abstract void moverse ()
+			+ String toString ()
+			
+		Class Torre extends Ajedrez
+		
+		+ Torre (String color, char posicionX, int posicionY, String nombre)
+		
+		heredados:
+			
+			+ abstract void moverse ()
+			+ String toString ()
+		
+		Class Peon extends Ajedrez
+		
+		+ Ajedrez (String color, char posicionX, int posicionY, String nombre)
+		
+		heredados:
+			
+			+ abstract void moverse ()
+			+ String toString ()
+		
+		Class Alfil extends Ajedrez
+		
+		+ Ajedrez (String color, char posicionX, int posicionY, String nombre)
+		
+		heredados:
+			
+			+ abstract void moverse ()
+			+ String toString ()
+		
+		Class Caballo extends Ajedrez
+		
+		+ Ajedrez (String color, char posicionX, int posicionY, String nombre)
+		
+		heredados:
+			
+			+ abstract void moverse ()
+			+ String toString ()
+		
+		Class Dama extends Ajedrez
+		
+		+ Ajedrez (String color, char posicionX, int posicionY, String nombre)
+		
+		heredados:
+			
+			+ abstract void moverse ()
+			+ String toString ()
+		
+		Class Rey extends Ajedrez
+		
+		+ Ajedrez (String color, char posicionX, int posicionY, String nombre)
+		
+		heredados:
+			
+			+ abstract void moverse ()
+			+ String toString ()
+		
+	Class Damas extends Pieza implements Movimiento
+	
+		+ Damas (String color, char posicionX, int posicionY)
+	
+		heredados:
+		
+			+ void moverse ()
+			+ String toString ()
+	
+	Class HundirLaFlota extends Pieza
+	
+		- enum Tipo {DERECHA, IZQUIERDA, ARRIBA, ABAJO}
+		- Tipo direccion
+		- int tamaño
+		
+		+  HundirLaFlota (String color, char posicionX, int posicionY, String direccion, int tamaño)
+		
+		+ String getDireccion ()
+		+ int getTamaño ()
+		
+		heredados:
+		
+			+ String toString ()
+	
+	Class Go extends Pieza
+	
+		+ Go (String color, char posicionX, int posicionY)
+		
+		heredados:
+		
+			+ String toString ()
+	
+	interface Movimiento
+	
+		+ void movimiento ()
+		
