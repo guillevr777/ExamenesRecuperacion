@@ -1,6 +1,6 @@
 package examenherencias.tercero.clases;
 
-public class Pieza implements Comparable<Pieza> {
+public abstract class Pieza implements Comparable<Pieza> {
 
 	private enum Tipo {BLANCO, NEGRO, GRIS};
 	private Tipo color;
@@ -37,6 +37,9 @@ public class Pieza implements Comparable<Pieza> {
 	public int getPosicionY () {
 		return this.getPosicionY();
 	}
+	
+	@Override
+	public abstract boolean equals(Object obj);
 		
 	@Override
 	public String toString () {

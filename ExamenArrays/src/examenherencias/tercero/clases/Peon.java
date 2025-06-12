@@ -10,6 +10,19 @@ public class Peon   extends Ajedrez{
 	public void moverse() {
 		
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean iguales = false;
+		
+		if (obj instanceof Peon p) {
+			if (String.valueOf(this.getPosicionX()).equals(String.valueOf(p.getPosicionX())) && this.getPosicionY() == p.getPosicionY()) {
+				iguales = true;
+			}
+		}
+		
+		return iguales;
+	}
 
 	@Override
 	public String toString () {

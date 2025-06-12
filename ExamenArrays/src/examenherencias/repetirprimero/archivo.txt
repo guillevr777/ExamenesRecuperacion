@@ -1,0 +1,42 @@
+
+	Class abstract Personaje
+	
+		- String nombre
+		- int nivel = 0
+		- int puntosVida
+		- int puntosMana
+		- boolean escudo = false
+		- List<Pocion> pociones = new ArrayList<Pocion>() {VIDA, MANA} (Cantidad que restaura)
+		
+		+ Personaje (String nombre, int puntosVida, int puntosMana)
+		
+		+ void recibirDaño (int daño)
+		+ void recuperarVida (int vida)
+		+ void recuperarManá (int mana)
+		+ void cogerPoción (Pocion pocion)
+		+ void usarPoción ()
+		
+	Class Guerrero extends Personaje
+	
+		+ Guerrero (String nombre, int puntosVida, int puntosMana)
+		
+	Class Picaro extends Personaje
+	
+		+ Picaro (String nombre, int puntosVida, int puntosMana)
+		
+	Class Mago extends Personaje
+				
+		+ Mago (String nombre, int puntosVida, int puntosMana)
+		
+	interface Ataca
+	
+		+ void atacar (Personaje enemigo)
+	
+	interface Defiende
+	
+		+ void defender (Personaje aliado)
+		
+	interface Cura
+		
+		+ void curar (Personaje aliado)
+		
