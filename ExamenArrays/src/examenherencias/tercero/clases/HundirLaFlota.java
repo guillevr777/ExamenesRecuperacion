@@ -40,7 +40,6 @@ public class HundirLaFlota extends Pieza {
 				iguales = true;
 			}
 		}
-		
 		return iguales;
 	}
 	

@@ -16,7 +16,7 @@ public abstract class Ajedrez extends Pieza implements Movimiento {
 	}
 	
 	@Override
-	public abstract void moverse();
+	public abstract boolean moverse();
 	
 	@Override
 	public String toString () {

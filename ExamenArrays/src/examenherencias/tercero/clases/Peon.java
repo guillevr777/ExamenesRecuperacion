@@ -7,8 +7,10 @@ public class Peon   extends Ajedrez{
 	}
 
 	@Override
-	public void moverse() {
+	public boolean moverse() {
+		boolean acierto = false;
 		
+		return acierto;
 	}
 	
 	@Override

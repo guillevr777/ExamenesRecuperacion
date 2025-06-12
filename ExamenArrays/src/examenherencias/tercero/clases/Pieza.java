@@ -35,7 +35,15 @@ public abstract class Pieza implements Comparable<Pieza> {
 	}
 	
 	public int getPosicionY () {
-		return this.getPosicionY();
+		return this.posicionY;
+	}
+	
+	public int cambioChar (char posX, int posY) {
+		int x = 0;
+		
+		x = (int)(posX - 65);
+		
+		return x;
 	}
 	
 	@Override
@@ -46,9 +54,6 @@ public abstract class Pieza implements Comparable<Pieza> {
 		return "";
 	}
 	
-	/**
-	 * Como comparar los dos objetos
-	 */
 	@Override
 	public int compareTo(Pieza o) {
 		int posicion = 0;

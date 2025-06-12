@@ -9,8 +9,10 @@ public class Damas extends Pieza implements Movimiento{
 	}
 
 	@Override
-	public void moverse() {
+	public boolean moverse() {
+		boolean acierto = false;
 		
+		return acierto;
 	}
 	
 	@Override
